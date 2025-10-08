@@ -1,5 +1,5 @@
 const API_BASE =
-  "https://fsa-crud-2aa9294fe819.herokuapp.com/api/YOUR_COHORT_CODE/events";
+  "https://fsa-crud-2aa9294fe819.herokuapp.com/api/2109-CPU-RM-WEB-PT/events";
 
 const state = {
   events: [],
@@ -73,8 +73,10 @@ function renderPartyDetails() {
     return detailsContainer;
   }
 
+  const formattedDate = new Date(event.date).toISOString().split("T")[0];
+
   const title = createElement("h3", [], `${event.name} #${event.id}`);
-  const date = createElement("p", [], event.date);
+  const date = createElement("p", [], formattedDate);
   const location = createElement("p");
   location.innerHTML = `<em>${event.location}</em>`;
   const description = createElement("p", [], event.description);
@@ -89,9 +91,6 @@ function render() {
   root.innerHTML = "";
 
   const layout = createElement("div", ["layout"]);
-  layout.style.display = "flex";
-  layout.style.justifyContent = "space-between";
-  layout.style.gap = "2rem";
 
   layout.appendChild(renderPartyList());
   layout.appendChild(renderPartyDetails());
