@@ -1,0 +1,21 @@
+.party-button {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin: 0.25rem 0;
+  text-align: left;
+}
+
+.party-button:hover {
+  background: #f0f0f0;
+}
+
+.party-button.selected {
+  font-weight: bold;
+  font-style: italic;
+  background: #e0f7fa;
+  border-color: #00acc1;
+}
